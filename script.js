@@ -1,6 +1,3 @@
-let viewTimeDiv = document.querySelector('.view-time');
-let options = document.querySelectorAll('option');
-let select = document.querySelector('select');
 let timeZones = []
 
 for(let i = -12; i <= 12; i++) {
