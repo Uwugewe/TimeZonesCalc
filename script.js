@@ -13,16 +13,13 @@ class City {
         this.GMT = GMT;
         this.zeroDateMs = new Date().getTime() + (new Date().getTimezoneOffset() * 60 * 1000);
         this.date = '';
-        this.time();
+        this.time(this.GMT);
     }
     time(gmtParameter){
+
         timeZones.forEach(gmt => {
             if(gmtParameter === gmt) {
                 this.date = new Date(this.zeroDateMs + gmt * 60 * 60 * 1000).toString().substr(0,25);
-                console.log(this.date);
-            } else {
-                let validationError = '<h1>Podano nieprawidłową strefę czasową GMT</h1>'
-                console.log(validationError);
             }
         });
     }
@@ -30,5 +27,11 @@ class City {
 
 let warsaw = new City('Warsaw', 2);
 console.log(warsaw);
+
+let moscow = new City('Moscow', 4);
+console.log(moscow);
+
+let NewYork = new City('New York', 6);
+console.log(NewYork);
 
   
